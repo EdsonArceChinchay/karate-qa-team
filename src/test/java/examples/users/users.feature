@@ -43,4 +43,14 @@ Feature: sample karate test script
     # When method get
     # Then status 200
     # And match response contains user
+
+
+  Scenario: CP-03 - Login Exitoso
+    Given url "https://petstore.swagger.io/v2"
+    And path "/user/login"
+    And param username = "edson"
+    And param password = "123456"
+    When method get
+    Then status 200
+    And match response.message == "#string"
   
